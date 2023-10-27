@@ -1,12 +1,15 @@
-package com.houarizegai.calculator;
+"""
+This module is the entry point for the calculator application.
 
-import com.houarizegai.calculator.ui.CalculatorUI;
+Usage:
+    Run this module to start the calculator application.
 
-public class App {
+Example:
+    $ java com.houarizegai.calculator.App
 
-    
-    public static void main(String[] args) {
-        
-        new CalculatorUI();
-    }
-}
+Exceptions:
+    None.
+
+Note:
+    This module requires the `CalculatorUI` class from the `com.houarizegai.calculator.ui` package.
+"""
