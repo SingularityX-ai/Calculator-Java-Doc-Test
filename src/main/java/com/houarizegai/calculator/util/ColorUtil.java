@@ -10,6 +10,8 @@ public class ColorUtil {
     }
 
     public static Color hex2Color(String colorHex) {
+
+        
         return Optional.ofNullable(colorHex)
                 .map(hex -> new Color(
                         Integer.valueOf(colorHex.substring(0, 2), 16),
