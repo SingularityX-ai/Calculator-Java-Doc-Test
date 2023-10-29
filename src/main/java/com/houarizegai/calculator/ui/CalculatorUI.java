@@ -101,6 +101,7 @@ public class CalculatorUI {
     }
 
     private void initThemeSelector() {
+        
         comboTheme = createComboBox(themesMap.keySet().toArray(new String[0]), 230, 30, "Theme");
         comboTheme.addItemListener(event -> {
             if (event.getStateChange() != ItemEvent.SELECTED)
@@ -116,6 +117,7 @@ public class CalculatorUI {
     }
 
     private void initInputScreen(int[] columns, int[] rows) {
+        
         inputScreen = new JTextField("0");
         inputScreen.setBounds(columns[0], rows[0], 350, 70);
         inputScreen.setEditable(false);
@@ -125,6 +127,7 @@ public class CalculatorUI {
     }
 
     private void initCalculatorTypeSelector() {
+        
         comboCalculatorType = createComboBox(new String[]{"Standard", "Scientific"}, 20, 30, "Calculator type");
         comboCalculatorType.addItemListener(event -> {
             if (event.getStateChange() != ItemEvent.SELECTED)
