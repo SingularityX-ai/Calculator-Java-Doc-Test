@@ -81,6 +81,18 @@ public class CalculatorUI {
         window.setVisible(true);
     }
 
+            /**
+             * Calculates the result of a mathematical operation between two numbers.
+             *
+             * @param firstNumber  the first number in the operation
+             * @param secondNumber the second number in the operation
+             * @param operator     the operator to be applied to the numbers
+             * @return the result of the operation
+             * @throws ArithmeticException if the operator is '/' and the second number is 0
+             *
+             * @example
+             * double result = calculate(5, 3, '+'); // result = 8.0
+             */
     public double calculate(double firstNumber, double secondNumber, char operator) {
         switch (operator) {
             case '+':
@@ -100,6 +112,18 @@ public class CalculatorUI {
         }
     }
 
+    /**
+     * Initializes the theme selector.
+     *
+     * This method creates a combo box with the available themes and sets up an item listener to apply the selected theme when it changes.
+     * If there are no themes available, no action is taken.
+     *
+     * @throws NullPointerException if the themes map is null.
+     *
+     * @example
+     * // Initialize the theme selector
+     * initThemeSelector();
+     */
     private void initThemeSelector() {
         
         comboTheme = createComboBox(themesMap.keySet().toArray(new String[0]), 230, 30, "Theme");
@@ -116,6 +140,22 @@ public class CalculatorUI {
         }
     }
 
+    /**
+     * Initializes the input screen with a default value of "0" and sets its properties.
+     *
+     * @param columns an array of integers representing the x-coordinate of the input screen's position
+     * @param rows an array of integers representing the y-coordinate of the input screen's position
+     * @throws IllegalArgumentException if the length of the columns or rows arrays is not equal to 1
+     * @throws NullPointerException if either the columns or rows array is null
+     *
+     * Example usage:
+     *
+     * int[] columns = {10};
+     * int[] rows = {20};
+     * initInputScreen(columns, rows);
+     *
+     * This will initialize the input screen at position (10, 20) with a default value of "0".
+     */
     private void initInputScreen(int[] columns, int[] rows) {
         
         inputScreen = new JTextField("0");
@@ -531,6 +571,23 @@ public class CalculatorUI {
         return btn;
     }
 
+    /**
+     * Applies the specified theme to the user interface.
+     *
+     * @param theme the theme to apply
+     * @throws IllegalArgumentException if the theme is null
+     * @throws IllegalArgumentException if any of the color values in the theme are invalid
+     *
+     * @example
+     * Theme theme = new Theme();
+     * theme.setApplicationBackground("#FFFFFF");
+     * theme.setTextColor("#000000");
+     * theme.setNumbersBackground("#CCCCCC");
+     * theme.setOperatorBackground("#999999");
+     * theme.setBtnEqualBackground("#FF0000");
+     * theme.setBtnEqualTextColor("#FFFFFF");
+     * applyTheme(theme);
+     */
     private void applyTheme(Theme theme) {
         window.getContentPane().setBackground(hex2Color(theme.getApplicationBackground()));
 
