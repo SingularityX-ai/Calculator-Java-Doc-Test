@@ -9,6 +9,16 @@ public class ColorUtil {
         throw new AssertionError("Constructor is not allowed");
     }
 
+    /**
+     * Converts a hexadecimal color code to a Color object.
+     *
+     * @param colorHex the hexadecimal color code to convert
+     * @return the Color object representing the hexadecimal color code, or null if the input is null
+     * @throws NumberFormatException if the input is not a valid hexadecimal color code
+     * @example
+     * Color color = hex2Color("#FF0000");
+     * // color is now a Color object representing the color red
+     */
     public static Color hex2Color(String colorHex) {
 
         
