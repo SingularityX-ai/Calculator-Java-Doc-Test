@@ -28,5 +28,6 @@ public class ColorUtil {
                         Integer.valueOf(colorHex.substring(2, 4), 16),
                         Integer.valueOf(colorHex.substring(4, 6), 16)))
                 .orElse(null);
+        
     }
 }
