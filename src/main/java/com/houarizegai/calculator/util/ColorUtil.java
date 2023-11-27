@@ -20,8 +20,6 @@ public class ColorUtil {
      * // color is now a Color object representing the color red
      */
     public static Color hex2Color(String colorHex) {
-
-        
         return Optional.ofNullable(colorHex )
                 .map(hex -> new Color (
                         Integer.valueOf( colorHex.substring(0, 2), 16),
