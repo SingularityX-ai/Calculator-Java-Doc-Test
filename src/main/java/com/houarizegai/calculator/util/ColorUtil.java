@@ -10,14 +10,68 @@ public class ColorUtil {
     }
 
     /**
-     * Converts a hexadecimal color code to a Color object.
+     * Transforms the sign-up request data to match the backend's expected format.
      *
-     * @param colorHex the hexadecimal color code to convert
-     * @return the Color object representing the hexadecimal color code, or null if the input is null
-     * @throws NumberFormatException if the input is not a valid hexadecimal color code
+     * @param {SignUpRequest} signUpData - The original sign-up request data.
+     *
+     * @returns {Object} The transformed sign-up request data with the following changes:
+     * - `firstName` is mapped to `first_name`
+     * - `lastName` is mapped to `last_name`
+     * - `email` is mapped to `username`
+     * - All other properties remain unchanged.
+     *
      * @example
-     * Color color = hex2Color("#FF0000");
-     * // color is now a Color object representing the color red
+     * const originalData = {
+     *   firstName: 'John',
+     *   lastName: 'Doe',
+     *   email: 'john.doe@example.com',
+     *   password: 'securePassword123'
+     * };
+     *
+     * const transformedData = transformSignUpRequestForBackend(originalData);
+     * console.log(transformedData);
+    /**
+     * Transforms the sign-up request data to match the backend's expected format.
+     *
+     * @param {SignUpRequest} signUpData - The original sign-up request data.
+     *
+     * @returns {Object} The transformed sign-up request data with the following changes:
+     * - `firstName` is mapped to `first_name`
+     * - `lastName` is mapped to `last_name`
+     * - `email` is mapped to `username`
+     * - All other properties remain unchanged.
+     *
+     * @example
+     * const originalData = {
+     *   firstName: 'John',
+     *   lastName: 'Doe',
+     *   email: 'john.doe@example.com',
+     *   password: 'securePassword123'
+     * };
+     *
+     * const transformedData = transformSignUpRequestForBackend(originalData);
+     * console.log(transformedData);
+     * // Outputs:
+     * // {
+     * //   firstName: 'John',
+     * //   lastName: 'Doe',
+     * //   email: 'john.doe@example.com',
+     * //   password: 'securePassword123',
+     * //   first_name: 'John',
+     * //   last_name: 'Doe',
+     * //   username: 'john.doe@example.com'
+     * // }
+     */
+     * // Outputs:
+     * // {
+     * //   firstName: 'John',
+     * //   lastName: 'Doe',
+     * //   email: 'john.doe@example.com',
+     * //   password: 'securePassword123',
+     * //   first_name: 'John',
+     * //   last_name: 'Doe',
+     * //   username: 'john.doe@example.com'
+     * // }
      */
     public static Color hex2Color(String colorHex) {
         // test 1
