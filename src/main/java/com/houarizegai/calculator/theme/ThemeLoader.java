@@ -17,6 +17,29 @@ public class ThemeLoader {
     }
 
     public static Map<String, Theme> loadThemes() {
+        
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        mapper.findAndRegisterModules();
+        try {
+            ThemeList themeList = mapper.readValue(new File("src/main/resources/application.yaml"), ThemeList.class);
+            return themeList.getThemesAsMap();
+        } catch (IOException e) {
+            return Collections.emptyMap();
+        }
+    }
+
+    public static Map<String, Theme> loadThemes(String theme) {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+        mapper.findAndRegisterModules();
+        try {
+            ThemeList themeList = mapper.readValue(new File("src/main/resources/application.yaml"), ThemeList.class);
+            return themeList.getThemesAsMap();
+        } catch (IOException e) {
+            return Collections.emptyMap();
+        }
+    }
+
+    public static Map<String, Theme> loadThemes(String theme, String dType) {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         mapper.findAndRegisterModules();
         try {
