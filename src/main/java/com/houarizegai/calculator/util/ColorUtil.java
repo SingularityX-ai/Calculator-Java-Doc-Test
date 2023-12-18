@@ -20,7 +20,6 @@ public class ColorUtil {
      * // color is now a Color object representing the color red
      */
     public static Color hex2Color(String colorHex) {
-        // test 1
         return Optional.ofNullable(colorHex )
                 .map(hex -> new Color (
                         Integer.valueOf( colorHex.substring(0, 2), 16),
@@ -31,7 +30,6 @@ public class ColorUtil {
     }
 
     public static Color hex2Color(String colorHex, String dType) {
-        // test 2
         return Optional.ofNullable(colorHex )
                 .map(hex -> new Color (
                         Integer.valueOf( colorHex.substring(0, 2), 16),
